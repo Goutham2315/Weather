@@ -19,7 +19,9 @@ async function GetWeatherData(place) {
         let city = document.querySelector(".city");
         city.innerHTML = data.name;
         let temp = document.querySelector(".temperature");
-        temp.innerHTML = Math.round(data.main.temp) + " &deg C";
+        // temp.innerHTML = Math.round(data.main.temp) + " &deg C";
+        temp.innerHTML = Math.round(data.main.temp - 273.15) + " &deg;C";
+
         let humidity = document.querySelector(".humidity");
         humidity.innerHTML = data.main.humidity + " %";
         let wind = document.querySelector(".wind");
